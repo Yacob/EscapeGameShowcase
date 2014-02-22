@@ -30,13 +30,14 @@ public class DogeController : MonoBehaviour {
 		GameObject [] crumbs = GameObject.FindGameObjectsWithTag ("breadcrumb");
 		float max_crumb_time = 0;
 		has_crumb = false;
+		Debug.Log(crumbs.Length);
 		foreach (GameObject crumb in crumbs) {
 			if (Vector3.Distance(crumb.transform.position, this.gameObject.transform.position)<scent_range){
 				float lt = crumb.GetComponent<BreadcrumbScript>().lifetime;
 				if ( lt > max_crumb_time || !has_crumb){
+					crumb_to_follow = crumb;
 					max_crumb_time = lt;
 					has_crumb = true;
-					crumb_to_follow = crumb;
 				}
 			}
 		}

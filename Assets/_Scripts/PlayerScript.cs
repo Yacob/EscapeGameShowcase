@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour {
 	public float MaxSpeed = 4;
 	public Vector3 movement;
 	public Transform breadCrumb;
+	public Transform CrumbParent;
 
 	void Update () {
 		Move();
@@ -16,7 +17,7 @@ public class PlayerScript : MonoBehaviour {
 		Transform crumb;
 		crumb = (Transform)Instantiate(breadCrumb, transform.position, Quaternion.identity);
 		crumb.name = string.Format("({0}, {1})", transform.position.x, transform.position.y);
-		crumb.parent = transform;
+		crumb.parent = CrumbParent;
 	}
 	
 	
@@ -58,19 +59,19 @@ public class PlayerScript : MonoBehaviour {
 	Vector3 decelerate(){
 		Vector3 temp = rigidbody.velocity;
 		if(rigidbody.velocity.y > 0){
-			temp.y -= .02f;
+			temp.y -= .03f;
 			rigidbody.velocity = temp;			
 		}
 		else if(rigidbody.velocity.y < 0){
-			temp.y += .02f;
+			temp.y += .03f;
 			rigidbody.velocity = temp;	
 		}
 		
 		if(rigidbody.velocity.x > 0){
-			temp.x -= .02f;	
+			temp.x -= .03f;	
 		}
 		else if(rigidbody.velocity.x < 0){
-			temp.x += .02f;
+			temp.x += .03f;
 		}
 		return temp;
 	}
