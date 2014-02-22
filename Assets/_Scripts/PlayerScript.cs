@@ -7,10 +7,13 @@ public class PlayerScript : MonoBehaviour {
 	public Vector3 movement;
 	public Transform breadCrumb;
 	public Transform CrumbParent;
+	public bool inWater = false;
 
 	void Update () {
 		Move();
-		DropBreadCrumb();
+		if(!inWater){
+			DropBreadCrumb();
+		}
 	}
 	
 	void DropBreadCrumb(){

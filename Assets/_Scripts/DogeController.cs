@@ -5,7 +5,7 @@ public class DogeController : MonoBehaviour {
 	
 	public bool barking = false;
 	public float scent_range = 5;
-	public float speed = 1;
+	public float speed = 2.5f;
 	public bool has_crumb = false;
 	public GameObject crumb_to_follow;
 	
