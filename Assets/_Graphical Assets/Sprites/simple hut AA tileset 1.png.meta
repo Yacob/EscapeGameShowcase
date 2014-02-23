@@ -1,0 +1,432 @@
+fileFormatVersion: 2
+guid: 03caf1c578c230642be1f5bcd7edcf1a
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: -1
+  nPOTScale: 1
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 5
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: simple hut AA tileset 1_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 816
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_1
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 816
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_2
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 816
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_3
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 816
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 576
+        width: 204
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_5
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 571
+        width: 204
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_6
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 576
+        width: 204
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_7
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 571
+        width: 204
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 336
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 336
+        width: 207
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_10
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 336
+        width: 204
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_11
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 331
+        width: 204
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_13
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_15
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 292
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_16
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_17
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 292
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_19
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 128
+        width: 171
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_20
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 129
+        width: 172
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_21
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 116
+        width: 195
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_22
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 114
+        width: 199
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_23
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 84
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_24
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_25
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 84
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_26
+      rect:
+        serializedVersion: 2
+        x: 34
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_27
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_28
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 84
+        width: 4
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_29
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 84
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_30
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 84
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_31
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 84
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_32
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 84
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_33
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 84
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_34
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 84
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_35
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 84
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_36
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_37
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_38
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_39
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_40
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 84
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_41
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: simple hut AA tileset 1_42
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 84
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
