@@ -31,6 +31,8 @@ public class PlayerScript : MonoBehaviour {
 			Time.timeScale = 1;
 			paused = false;
 			Application.LoadLevel(t_level);
+			HunterScript.seen = 3.0f;
+			
 		}
 		Move();
 		if(!inWater && till_drop <= 0){
