@@ -7,11 +7,17 @@ public class DogeController : Enemy {
 	public float scent_range_2 = 25;
 	public bool has_crumb = false;
 	public GameObject crumb_to_follow;
-
+	public AudioSource barkingSounds;
+	public float timer = 5;
 	// Use this for initialization
 	void Start () {
 		start_pos = this.gameObject.transform.position;
 		GenerateDest ();
+		barkingSounds = gameObject.GetComponent<AudioSource>();
+		barkingSounds.loop = true;
+		barkingSounds.volume = 10;
+		barkingSounds.Stop();
+		
 	}
 
 	void CheckForCrumbs() {
@@ -33,9 +39,21 @@ public class DogeController : Enemy {
 	// Update is called once per frame
 	void Update () {
 		barking = crumb_to_follow;
+		Debug.Log(barking);
+		if(barking && !barkingSounds.isPlaying){
+			barkingSounds.Play();
+			timer = 5;
+		}
+		else if(barkingSounds.isPlaying){
+			timer -= Time.deltaTime;
+			if(timer <= 0){
+				barkingSounds.Stop();
+			}						
+		}
 		CheckForCrumbs();
 		MoveToDest(has_crumb ? crumb_to_follow.transform.position:dest);
-		if (Vector3.Distance(this.transform.position,dest)==0)
+		if (Vector3.Distance(this.transform.position,dest)==0){
 			GenerateDest();
+		}	
 	}
 }
