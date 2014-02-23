@@ -1,23 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
-public class HunterScript : MonoBehaviour {
+public class HunterScript : Enemy {
 
 	public float viewAngle;
 	public float viewRadius;
-
-	public float moveSpd;
-	public float turnSpd;
 	
-	public float patrolTime;
-	public float patrolDir;
-
+	public List<Vector3> patrolLocations;
+	
 	public Material lineMaterial;
 
-	private float curTime;
-	private float curDir;
-	private float turnTime;
 	private bool isPatrol = true;
+	private int curPatrolLoc = 0;
 
 	private LineRenderer line;
 
@@ -56,7 +51,7 @@ public class HunterScript : MonoBehaviour {
 			}
 		}
 		else if(barkingDoge != null){
-			Chase (barkingDoge);
+			Chase(barkingDoge);
 		}
 		else{
 			Patrol();
@@ -64,43 +59,20 @@ public class HunterScript : MonoBehaviour {
 	}
 
 	void Patrol(){
-/*		if(!isPatrol){
-			StartPatrol();
-		}		
-		//this.transform.position += this.transform.forward * moveSpd*Time.deltaTime;
-		curTime -= Time.deltaTime;
-		if(curTime <= 0){
-			curDir *= -1;
-			curTime = patrolTime;
-		}*/
+		if(transform.position == patrolLocations[curPatrolLoc]){
+			curPatrolLoc++;
+			if(curPatrolLoc >= patrolLocations.Count)
+				curPatrolLoc = 0;
+		}
+		MoveToDest(patrolLocations[curPatrolLoc]);
 	}
 	
 	void StartPatrol(){
-			
-	}
-	public IEnumerator PatrolTurn(){
-		Transform target = this.transform.GetChild(0);
-		Vector3 dir = target.position - transform.position;
-		Quaternion targetRotation = Quaternion.LookRotation(dir);
-	
-		while(Quaternion.Angle(transform.rotation, targetRotation) >.01){
-			Quaternion old = transform.rotation;
-			transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnTime);
-			turnTime += .01f;
-			yield return(new WaitForSeconds(Time.deltaTime));
-		}
-		turnTime = 0;
-		
+			MoveToDest (patrolLocations[curPatrolLoc]);
 	}
 
 	void Chase(GameObject target){
-		Debug.Log("chasing");
-		Vector3 dir = target.transform.position - transform.position;
-		Quaternion targetRotation = Quaternion.LookRotation(dir);
-		Quaternion old = transform.rotation;
-		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnTime);
-		turnTime += .01f;
-		this.transform.position += this.transform.up * moveSpd*Time.deltaTime;
+		MoveToDest(target.transform.position, Time.deltaTime);
 	}
 
 	void DrawCone(){
@@ -110,7 +82,7 @@ public class HunterScript : MonoBehaviour {
 		line.material = lineMaterial;
 		line.renderer.enabled = true;
 		line.SetPosition(0, transform.position);
-		line.SetPosition(1, transform.position + transform.up * viewRadius);
+		line.SetPosition(1, transform.position + transform.forward * viewRadius);
 	}
 
 }

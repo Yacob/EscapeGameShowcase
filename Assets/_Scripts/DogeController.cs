@@ -1,29 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DogeController : MonoBehaviour {
+public class DogeController : Enemy {
 	
 	public bool barking = false;
 	public float scent_range_2 = 25;
-	public float speed = 2.5f;
 	public bool has_crumb = false;
 	public GameObject crumb_to_follow;
-	
-	public Vector3 start_pos;
-	public Vector3 dest;
-	public float wander_radius = 5;
 
 	// Use this for initialization
 	void Start () {
 		start_pos = this.gameObject.transform.position;
 		GenerateDest ();
-	}
-	
-	void GenerateDest () {
-		Vector2 d = Random.insideUnitCircle*wander_radius;
-		dest = start_pos;
-		dest.x += d.x;
-		dest.y += d.y;
 	}
 
 	void CheckForCrumbs() {
@@ -40,17 +28,6 @@ public class DogeController : MonoBehaviour {
 				}
 			}
 		}
-	}
-	
-	void MoveToDest(Vector3 dest, float t) {
-		Vector3 p = this.gameObject.transform.position;
-		if (Vector3.Distance(dest,p)<speed*t){
-			this.gameObject.transform.position = dest;
-		} else {
-			Vector3 d = Vector3.Normalize(dest - p);
-			this.gameObject.transform.position = p + d*speed*t;
-		}
-		
 	}
 	
 	// Update is called once per frame

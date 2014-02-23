@@ -5,8 +5,9 @@ using System.Collections;
 		public Vector3 start_pos;
 		public Vector3 dest;
 		public float wander_radius = 5;
-		public float speed = 1;
-		
+		public float speed = 2.5f;
+		public float angular_speed = 360;
+				
 		protected void Start(){	
 			start_pos = this.gameObject.transform.position;
 			GenerateDest ();
@@ -19,13 +20,26 @@ using System.Collections;
 			dest.y += d.y;
 		}
 		
-		protected void MoveToDest(Vector3 dest, float t) {
+		protected void MoveToDest(Vector3 dest, float t = -100) {
+			if(t == -100){
+				t = Time.deltaTime;
+			}
 			Vector3 p = this.gameObject.transform.position;
+			Vector3 dir = this.gameObject.transform.forward;
+			Vector3 d = dest - p;
+			float angle = Mathf.Sign(Vector3.Dot (d,this.gameObject.transform.right))*Vector3.Angle(dir,d);
+			Vector3 a = new Vector3(0,0,0);
+			if (Mathf.Abs(angle)<angular_speed*t){
+				a.y = angle;
+				this.gameObject.transform.Rotate(a);
+			} else {
+				a.y = Mathf.Sign(angle)*angular_speed*t;
+				this.gameObject.transform.Rotate(a);
+			}
 			if (Vector3.Distance(dest,p)<speed*t){
 				this.gameObject.transform.position = dest;
 			} else {
-				Vector3 d = Vector3.Normalize(dest - p);
-				this.gameObject.transform.position = p + d*speed*t;
+				this.gameObject.transform.position = p + this.gameObject.transform.forward*speed*t;
 			}
 			
 		}
