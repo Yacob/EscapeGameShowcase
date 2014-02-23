@@ -57,16 +57,20 @@ public class HunterScript : Enemy {
 	}
 
 	void Patrol(){
-		if(transform.position == patrolLocations[curPatrolLoc]){
-			curPatrolLoc++;
-			if(curPatrolLoc >= patrolLocations.Count)
-				curPatrolLoc = 0;
+		if (patrolLocations.Count>0){
+			if(transform.position == patrolLocations[curPatrolLoc]){
+				curPatrolLoc++;
+				if(curPatrolLoc >= patrolLocations.Count)
+					curPatrolLoc = 0;
+			}
+			MoveToDest(patrolLocations[curPatrolLoc]);
 		}
-		MoveToDest(patrolLocations[curPatrolLoc]);
 	}
 	
 	void StartPatrol(){
-		MoveToDest (patrolLocations[curPatrolLoc]);
+		if (patrolLocations.Count>0){
+			MoveToDest (patrolLocations[curPatrolLoc]);
+		}
 	}
 
 	void Chase(GameObject target){

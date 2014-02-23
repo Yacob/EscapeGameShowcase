@@ -8,7 +8,12 @@ using System.Collections;
 		public float speed = 2.5f;
 		public float angular_speed = 360;
 				
-			
+	
+	void Start () {
+		start_pos = this.gameObject.transform.position;
+		GenerateDest ();
+	}
+		
 		protected void GenerateDest () {
 			Vector2 d = Random.insideUnitCircle*wander_radius;
 			dest = start_pos;

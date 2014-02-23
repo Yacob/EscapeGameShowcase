@@ -32,6 +32,7 @@ public class DogeController : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+		barking = crumb_to_follow;
 		CheckForCrumbs();
 		MoveToDest(has_crumb ? crumb_to_follow.transform.position:dest, Time.deltaTime);
 		if (Vector3.Distance(this.transform.position,dest)==0)
