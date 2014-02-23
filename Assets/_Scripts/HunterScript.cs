@@ -50,6 +50,7 @@ public class HunterScript : MonoBehaviour {
 		}
 		if (playerDist <= viewRadius) {
 			float playerAngle = Vector3.Angle (PlayerPos, curPos);
+			Debug.Log(playerAngle);
 			if(Mathf.Abs(playerAngle) <= viewAngle){
 				Chase(player);
 			}
@@ -63,7 +64,7 @@ public class HunterScript : MonoBehaviour {
 	}
 
 	void Patrol(){
-		if(!isPatrol){
+/*		if(!isPatrol){
 			StartPatrol();
 		}		
 		//this.transform.position += this.transform.forward * moveSpd*Time.deltaTime;
@@ -71,7 +72,7 @@ public class HunterScript : MonoBehaviour {
 		if(curTime <= 0){
 			curDir *= -1;
 			curTime = patrolTime;
-		}
+		}*/
 	}
 	
 	void StartPatrol(){
@@ -93,23 +94,23 @@ public class HunterScript : MonoBehaviour {
 	}
 
 	void Chase(GameObject target){
+		Debug.Log("chasing");
 		Vector3 dir = target.transform.position - transform.position;
 		Quaternion targetRotation = Quaternion.LookRotation(dir);
 		Quaternion old = transform.rotation;
 		transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turnTime);
 		turnTime += .01f;
-		this.transform.position += this.transform.forward * moveSpd*Time.deltaTime;
+		this.transform.position += this.transform.up * moveSpd*Time.deltaTime;
 	}
 
 	void DrawCone(){
-		float width = Mathf.Tan(1/2 * viewAngle*Mathf.PI/180) * viewRadius;
+		float width = Mathf.Tan((0.5f) * viewAngle*(Mathf.PI/180)) * viewRadius;
 		line.SetWidth(0, width);
 		line.SetVertexCount(2);
 		line.material = lineMaterial;
 		line.renderer.enabled = true;
 		line.SetPosition(0, transform.position);
-		line.SetPosition(1, transform.position + transform.forward * viewRadius);
-		Debug.Log("done drawing");
+		line.SetPosition(1, transform.position + transform.up * viewRadius);
 	}
 
 }
