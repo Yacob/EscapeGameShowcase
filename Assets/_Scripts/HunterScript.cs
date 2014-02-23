@@ -47,7 +47,12 @@ public class HunterScript : Enemy {
 				Chase(player);
 				seen -= Time.deltaTime;
 				if(seen <= 0){
+<<<<<<< HEAD
 					player.GetComponent<PlayerScript>().Popup("You were caught and returned to the Plantation.",Application.loadedLevel);
+=======
+					Application.LoadLevel(0);
+					HunterScript.seen = 3;
+>>>>>>> d6e1811a411027defb91a2e4100776874965c585
 				}
 			}
 		}
