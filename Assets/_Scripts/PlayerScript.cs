@@ -10,9 +10,28 @@ public class PlayerScript : MonoBehaviour {
 	public bool inWater = false;
 	public float drop_rate = 0.1f;
 	public float till_drop = 0.1f;
-	
+	private bool paused = false;
+	private string pop_text = "";
+	private int t_level = 0;
+
+	public void Popup(string text, int level){
+		Time.timeScale = 0;
+		paused = true;
+		pop_text = text+"\nPress space to continue.";
+		t_level = level;
+	}
+
+	void OnGUI() {
+		if (paused)
+			GUI.Box (new Rect (Screen.width/10, Screen.height/10, Screen.width*8/10, Screen.height*8/10), pop_text);
+	}
 
 	void Update () {
+		if (paused && Input.GetKeyDown(KeyCode.Space)){
+			Time.timeScale = 1;
+			paused = false;
+			Application.LoadLevel(t_level);
+		}
 		Move();
 		if(!inWater && till_drop <= 0){
 			DropBreadCrumb();

@@ -21,10 +21,8 @@ using System.Collections;
 			dest.y += d.y;
 		}
 		
-		protected void MoveToDest(Vector3 dest, float t = -100) {
-			if(t == -100){
-				t = Time.deltaTime;
-			}
+		protected void MoveToDest(Vector3 dest) {
+			float t = Time.deltaTime;
 			Vector3 p = this.gameObject.transform.position;
 			Vector3 dir = this.gameObject.transform.forward;
 			Vector3 d = dest - p;
