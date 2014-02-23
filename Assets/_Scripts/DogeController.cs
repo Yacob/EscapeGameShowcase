@@ -39,7 +39,6 @@ public class DogeController : Enemy {
 	// Update is called once per frame
 	void Update () {
 		barking = crumb_to_follow;
-		Debug.Log(barking);
 		if(barking && !barkingSounds.isPlaying){
 			barkingSounds.Play();
 			timer = 5;
