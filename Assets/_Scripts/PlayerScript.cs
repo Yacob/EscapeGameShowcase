@@ -10,7 +10,7 @@ public class PlayerScript : MonoBehaviour {
 	public bool inWater = false;
 	public float drop_rate = 0.1f;
 	public float till_drop = 0.1f;
-	private bool paused = false;
+	public bool paused = false;
 	private string pop_text = "";
 	private int t_level = 0;
 
@@ -30,8 +30,10 @@ public class PlayerScript : MonoBehaviour {
 		if (paused && Input.GetKeyDown(KeyCode.Space)){
 			Time.timeScale = 1;
 			paused = false;
-			Application.LoadLevel(t_level);
-			HunterScript.seen = 3.0f;
+			if (t_level>=0){
+				Application.LoadLevel(t_level);
+				HunterScript.seen = 3.0f;
+			}
 			
 		}
 		Move();

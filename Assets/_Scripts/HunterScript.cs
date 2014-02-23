@@ -46,8 +46,9 @@ public class HunterScript : Enemy {
 			if(Mathf.Abs(playerAngle) <= viewAngle){
 				Chase(player);
 				seen -= Time.deltaTime;
-				if(seen <= 0){
-					player.GetComponent<PlayerScript>().Popup("You were caught and returned to the Plantation.",Application.loadedLevel);
+				if(seen <= 0 && !player.GetComponent<PlayerScript>().paused){
+					player.GetComponent<PlayerScript>().Popup("You were caught and returned to the Plantation.\n"+HouseScript.messages[HouseScript.message],Application.loadedLevel);
+					HouseScript.message = (HouseScript.message+1)%HouseScript.messages.Length;
 				}
 			}
 		}
