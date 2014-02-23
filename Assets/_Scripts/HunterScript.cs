@@ -10,8 +10,6 @@ public class HunterScript : Enemy {
 	public List<Vector3> patrolLocations;
 	
 	public Material lineMaterial;
-
-	private bool isPatrol = true;
 	private int curPatrolLoc = 0;
 
 	private LineRenderer line;
@@ -68,7 +66,7 @@ public class HunterScript : Enemy {
 	}
 	
 	void StartPatrol(){
-			MoveToDest (patrolLocations[curPatrolLoc]);
+		MoveToDest (patrolLocations[curPatrolLoc]);
 	}
 
 	void Chase(GameObject target){
