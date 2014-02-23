@@ -34,7 +34,7 @@ public class DogeController : Enemy {
 	void Update () {
 		barking = crumb_to_follow;
 		CheckForCrumbs();
-		MoveToDest(has_crumb ? crumb_to_follow.transform.position:dest, Time.deltaTime);
+		MoveToDest(has_crumb ? crumb_to_follow.transform.position:dest);
 		if (Vector3.Distance(this.transform.position,dest)==0)
 			GenerateDest();
 	}

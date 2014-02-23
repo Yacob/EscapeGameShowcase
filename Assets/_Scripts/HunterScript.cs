@@ -15,6 +15,7 @@ public class HunterScript : Enemy {
 	private LineRenderer line;
 
 	private Vector3 homeLoc;
+	public static float seen = 3.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -32,9 +33,8 @@ public class HunterScript : Enemy {
 		GameObject barkingDoge = null;
 		GameObject[] doges = GameObject.FindGameObjectsWithTag ("doge");
 		foreach(GameObject doge in doges){
-			DogeController dogescript = doge.GetComponent<DogeController>();
 			Vector3 dogePos = doge.transform.position;
-			if(dogescript.barking){
+			if(doge.GetComponent<DogeController>().barking){
 				if(barkingDoge == null)
 					barkingDoge = doge;
 				else if(Vector3.Distance(barkingDoge.transform.position, curPos) > Vector3.Distance(dogePos, curPos))
@@ -43,9 +43,13 @@ public class HunterScript : Enemy {
 		}
 		if (playerDist <= viewRadius) {
 			float playerAngle = Vector3.Angle (PlayerPos, curPos);
-			Debug.Log(playerAngle);
 			if(Mathf.Abs(playerAngle) <= viewAngle){
 				Chase(player);
+				seen -= Time.deltaTime;
+				if(seen <= 0){
+					Application.LoadLevel(0);
+					HunterScript.seen = 3;
+				}
 			}
 		}
 		else if(barkingDoge != null){
@@ -54,6 +58,9 @@ public class HunterScript : Enemy {
 		else{
 			Patrol();
 		}
+		Vector3 temp = transform.position;
+		temp.z = 0;
+		transform.position = temp;
 	}
 
 	void Patrol(){
@@ -74,7 +81,7 @@ public class HunterScript : Enemy {
 	}
 
 	void Chase(GameObject target){
-		MoveToDest(target.transform.position, Time.deltaTime);
+		MoveToDest(target.transform.position);
 	}
 
 	void DrawCone(){
