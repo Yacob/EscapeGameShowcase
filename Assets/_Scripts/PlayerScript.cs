@@ -8,11 +8,17 @@ public class PlayerScript : MonoBehaviour {
 	public Transform breadCrumb;
 	public Transform CrumbParent;
 	public bool inWater = false;
+	public float drop_rate = 0.1f;
+	public float till_drop = 0.1f;
+	
 
 	void Update () {
 		Move();
-		if(!inWater){
+		if(!inWater && till_drop <= 0){
 			DropBreadCrumb();
+			till_drop = drop_rate;
+		} else {
+			till_drop-=Time.deltaTime;
 		}
 	}
 	

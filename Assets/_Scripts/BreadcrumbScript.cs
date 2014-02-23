@@ -3,7 +3,7 @@ using System.Collections;
 
 public class BreadcrumbScript : MonoBehaviour {
 
-	public float lifetime = 30;
+	public float lifetime = 10;
 
 	// Use this for initialization
 	void Start () {
