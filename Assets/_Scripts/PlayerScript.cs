@@ -55,35 +55,38 @@ public class PlayerScript : MonoBehaviour {
 	
 	void Move(){
 		movement = decelerate();
+		float sprinting = 0.9f;
 		rigidbody.velocity = new Vector3(0, 0, 0);
-	
+		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Space)){
+			sprinting = 1.4f;
+		}
 		if(Input.GetKey(KeyCode.UpArrow)) {
 			Vector3 temp = new Vector3(0, .1f, 0);
-			movement += temp;
+			movement += (sprinting * temp);
 		}
 		if(Input.GetKey(KeyCode.DownArrow)) {
 			Vector3 temp = new Vector3(0, -0.1f, 0);
-			movement += temp;
+			movement += (sprinting * temp);
 		}
 		if(Input.GetKey(KeyCode.RightArrow)){
 			Vector3 temp = new Vector3(.1f, 0, 0);
-			movement += temp;
+			movement += (sprinting * temp);
 		}
 		if(Input.GetKey(KeyCode.LeftArrow)){
 			Vector3 temp = new Vector3(-0.1f, 0, 0);
-			movement += temp;
+			movement += (sprinting *temp);
 		}
-		if(movement.x > MaxSpeed){
-			movement.x = MaxSpeed;
+		if(movement.x > (MaxSpeed * sprinting)){
+			movement.x = MaxSpeed * sprinting;
 		}
-		else if(movement.x < -MaxSpeed){
-			movement.x = -MaxSpeed;
+		else if(movement.x < (-MaxSpeed * sprinting)){
+			movement.x = -MaxSpeed * sprinting;
 		}
-		if(movement.y > MaxSpeed){
-			movement.y = MaxSpeed;
+		if(movement.y > (MaxSpeed * sprinting)){
+			movement.y = MaxSpeed * sprinting;
 		}
-		else if(movement.y < -MaxSpeed){
-			movement.y = -MaxSpeed;	
+		else if(movement.y < (-MaxSpeed * sprinting)){
+			movement.y = -MaxSpeed * sprinting;	
 		}
 		rigidbody.velocity = movement;
 	}
