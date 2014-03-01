@@ -2,7 +2,16 @@ fileFormatVersion: 2
 guid: f68586f160d638049b429096b2a3b473
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - poi: {instanceID: 0}
+  - sprintProgressBarEmpty: {fileID: 2800000, guid: 0d78f581f44304e4ba3276fc4e90713c,
+      type: 3}
+  - sprintProgressBarFull: {fileID: 2800000, guid: 5f15f978146bfab429b6b18ea5e28842,
+      type: 3}
+  - caughtProgressBarEmpty: {fileID: 2800000, guid: 0d78f581f44304e4ba3276fc4e90713c,
+      type: 3}
+  - caughtProgressBarFull: {fileID: 2800000, guid: 00534c53068323e4d86dc17f22e9c048,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

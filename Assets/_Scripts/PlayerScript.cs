@@ -11,16 +11,19 @@ public class PlayerScript : MonoBehaviour {
 	public float drop_rate = 0.1f;
 	public float till_drop = 0.1f;
 	public bool paused = false;
+	public static float sprintRemaining;
 	private string pop_text = "";
 	private int t_level = 0;
-
+	
 	public void Popup(string text, int level){
 		Time.timeScale = 0;
 		paused = true;
 		pop_text = text+"\nPress space to continue.";
 		t_level = level;
 	}
-
+	void Start(){
+		sprintRemaining = 3;
+	}
 	void OnGUI() {
 		if (paused)
 			GUI.Box (new Rect (Screen.width/10, Screen.height/10, Screen.width*8/10, Screen.height*8/10), pop_text);
@@ -55,10 +58,20 @@ public class PlayerScript : MonoBehaviour {
 	
 	void Move(){
 		movement = decelerate();
+		
 		float sprinting = 0.9f;
 		rigidbody.velocity = new Vector3(0, 0, 0);
 		if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.Space)){
-			sprinting = 1.4f;
+			if(sprintRemaining > 0){
+				sprinting = 1.4f;
+				sprintRemaining -= Time.deltaTime;
+			}
+		}
+		else if (sprintRemaining < 5){
+			sprintRemaining += Time.deltaTime;
+		}
+		else{
+			sprintRemaining = 5;
 		}
 		if(Input.GetKey(KeyCode.UpArrow)) {
 			Vector3 temp = new Vector3(0, .1f, 0);
